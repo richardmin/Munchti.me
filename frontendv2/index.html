@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>munch</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+-->
+
+<!-- Included CSS Files (Compressed) -->
+<link rel="stylesheet" href="css/foundation.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!--javascript-->
+
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+
+<!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+
+  <body>
+
+    <div class="row page_wrap">
+      <!-- page wrap -->
+      <div class="twelve columns">
+        <!-- page wrap -->
+
+        <div class="row">
+          <div class="twelve columns">
+           <div class="heading_dots"><h1 class="heading_supersize" style="margin-bottom:5px"><span class="heading_center_bg">munchery</span></h1></div>
+         </div>
+       </div>
+
+       <div class="row" style="padding-top: 10px">
+
+        <ul class="accordion" data-accordion>
+
+          <li class="accordion-navigation">
+            <a href="#panel2a">I want food! </a>
+            <div id="panel2a" class="content">
+
+              <form>
+                <div class="row">
+                  <div class="9 columns">
+
+                    <div class="row">
+                      <div class="small-3 columns">
+                        <label for="right-label" class="right inline">I want:</label>
+                      </div>
+                      <div class="small-9 columns">
+                        <input type="text" id="right-label" name="food" id="food" placeholder="a hamburger from In-n-Out">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="small-3 columns">
+                        <label for="right-label" class="right inline">Deliver it to:</label>
+                      </div>
+                      <div class="small-9 columns">
+                        <input type="text" id="right-label" name="desination" placeholder="the library">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="small-3 columns">
+                        <label for="right-label" class="right inline">Within the next</label>
+                      </div>
+                      <div class="small-9 columns">
+                       <select name="time">
+                         <option value="husker">hour</option>
+                         <option value="starbuck">2 hours</option>
+                         <option value="hotdog">3 hours</option>
+                         <option value="apollo">4 hours</option>
+                       </select>
+                     </div>
+                   </div>
+
+                   <div class="row">
+                    <div class="small-3 columns">
+                      <label for="right-label" class="right inline">I'll pay:</label>
+                    </div>
+                    <div class="small-9 columns">
+                     <input type="text" name="time" placeholder="$$" />
+                    </div>
+                   </div>
+
+                   <div class="row">
+                    <div class="small-3 columns">
+                      <label for="right-label" class="right inline">Name:</label>
+                    </div>
+                    <div class="small-9 columns">
+                     <input type="text" name="name" placeholder="Barack Obama"/>
+                    </div>
+                   </div>
+
+                  <div class="row">
+                    <center><a href="#" class="button round" name="submit">Submit</a></center>
+                  </div>
+               </div>
+
+             </div>
+           </form>
+         </div>
+       </li>
+
+       <li class="accordion-navigation">
+        <a href="#panel3a">I want to deliver!</a>
+        <div id="panel3a" class="content">
+          <div class="panel">
+            <h5>This is a regular panel.</h5>
+            <p>It has an easy to override visual style, and is appropriately subdued.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </div><!-- end row -->
+
+  <div class="row">
+    <div class="twelve columns">
+      <ul id="menu3" class="footer_menu horizontal">
+        <li class=""><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+          //<![CDATA[
+          $('ul#menu3').nav-bar();
+          //]]>
+        </script>
+
+      </div>
+
+    </div><!-- end page wrap) -->
+    <!-- Included JS Files (Compressed) -->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation/foundation.accordion.js"></script>
+    <script>$(document).foundation();</script>
+
+    </body>
+    </html>

@@ -1,10 +1,11 @@
 from flask import render_template, redirect, request
 from app import app, models, db
 from .forms import CreatePostForm, PostCommentForm
-
+@app.route('/')
 @app.route('/home')
 def index():
-	return render_template('index.html')
+	posts = models.Post.query.all()
+	return render_template('index.html', posts=posts)
 @app.route('/create_post', methods=['GET', 'POST'])
 def create():
 	form = CreatePostForm(request.form)
@@ -16,3 +17,7 @@ def create():
 		return redirect('/home')
 	return render_template('create_post.html', form = form)
 
+@app.route('/static/stylesheets/style.css')
+def display():
+	# return "asdf"
+    return app.send_static_file('style.css')

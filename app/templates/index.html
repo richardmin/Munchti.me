@@ -1,4 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>sup!!</h1>
+
+<table>
+	{% for post in posts %}
+	<tr>
+		<td><h1>{{post.food}} from {{post.source}} at {{post.time}} for ${{post.payment}} </h1></td>
+	</tr>
+	{% endfor %}
+</table>
+
 {% endblock %}

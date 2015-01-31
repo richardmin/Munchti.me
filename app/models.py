@@ -1,5 +1,5 @@
 from app import db
-from DateTime import DateTime
+from datetime import datetime
 
 class Post(db.Model):
 	id 			= db.Column(db.Integer, primary_key=True)
@@ -12,7 +12,7 @@ class Post(db.Model):
 	info 		= db.Column(db.String(255))
 	name 		= db.Column(db.String(255))
 
- class Comment(db.Model):
+class Comment(db.Model):
  	id			= db.Column(db.String(255), primary_key=True)
  	post_id		= db.Column(db.Integer)
  	text		= db.Column(db.String(255))

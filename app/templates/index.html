@@ -137,7 +137,7 @@
 <div class="row">
   <div class="twelve columns">
     <ul id="menu3" class="footer_menu horizontal">
-      <li class=""><a href="index.html">Home</a></li>
+      <li class=""><a href="\">Refresh</a></li>
     </ul>
   </div>
 </div>
@@ -153,28 +153,29 @@ document.getElementById("ordersRequest").addEventListener("click", processClick)
   function processClick() 
   {
       if(isuck)
-        isuck=false;
-      else
-        isuck = true;
-
-      if(isuck)
       {
-        $("#panel3a").children("div").remove();
-      }
-      else
+        isuck = false;
+
         for(a = 1; a < 10; a++)
         {
           $.get("api/post/"+a, function(info) {
             if(! $.isEmptyObject(info))
             {
 
-            $("#panel3a").append($("<div>",{class:"asdf"}, {id:"posting"+a}).text(info.food + " from " + info.source + " at around "
+            $("#panel3a").append($("<li>",{class:"accordion-navigation"}, {id:"posting"+a}).text(info.food + " from " + info.source + " at around "
              + (info.time.substring(info.time.indexOf("T") + 1, info.time.lastIndexOf(":")))  + " for " + info.payment ));
+
+              document.getElementById("posting"+a).addEventListener("click", function() {
+                //does something like loading the rest of the data
+                //i don't knwow foundation
+                  Console.log("fu");
+              });
             
             }
             // console.log(data);
           });
         }
+      }
       // document.getElementById("panel3a").innerHTML = _____________; <!--HTTP GET REQUEST, FORMAT -->
   }
 

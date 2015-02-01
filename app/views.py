@@ -2,7 +2,7 @@ from flask import render_template, redirect, request
 from app import app, models, db, s, delete_entry
 from .forms import CreatePostForm, PostCommentForm
 import sched, time
-from DateTime import DateTime
+from datetime import datetime
 
 @app.route('/')
 @app.route('/home')

@@ -8,7 +8,7 @@ class Post(db.Model):
     source 		= db.Column(db.String(255))
     destination = db.Column(db.String(255))
     time 		= db.Column(db.DateTime)
-    payment 	= db.Column(db.Integer)
+    payment 	= db.Column(db.String(255))
     contact 	= db.Column(db.String(255))
     info 		= db.Column(db.String(255))
     name 		= db.Column(db.String(255))

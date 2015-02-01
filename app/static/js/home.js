@@ -2,11 +2,11 @@ $('#orderForm').submit(function(event) {
     event.preventDefault();  
 
 	function userOrderError() {
-		$('#orderError').html(error('We couldn\'t save your order. Please refresh and try again.'));
+		$('#orderError').html(error('<center>We couldn\'t save your order. Please refresh and try again.</center>'));
 		return;
 	}
     function userOrderSuccess() {
-        $('#orderError').html('We have recieved your order! Please refresh to submit a new one.');
+        $('#orderError').html('<center>We have recieved your order! Please refresh to submit a new one.</center>');
         return;
     }
     var data = $('#orderForm').serializeObject();

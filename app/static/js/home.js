@@ -1,3 +1,14 @@
+$(document).ready(function() {
+    loadOrders();
+})
+
+function loadOrders(){
+    var ordersPromise = getPosts();
+
+    ordersPromise = ordersPromise.then(function(orders, textStatus, jqXHR) {
+        return $
+    })
+}
 $('#orderForm').submit(function(event) {
     event.preventDefault();  
 
@@ -16,6 +27,24 @@ $('#orderForm').submit(function(event) {
         return;
     }
     var data = $('#orderForm').serializeObject();
+<<<<<<< HEAD
+    console.log(JSON.stringify(data));
+    $.ajax({
+        type: 'POST',
+        url: '/api/post',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+    }).done(function(order, textStatus, jqXHR) {
+        window.location.replace("/");
+        $("#submit").hide();
+        userOrderSuccess();
+    }).fail(function(error, textStatus, jqXHR) {
+        userOrderError();
+    });
+});
+
+
+=======
     if(data.name=="" || data.food=="" || data.destination==""|| data.time=="" || data.payment=="" || data.contact=="" )
     {
         userFormError();
@@ -44,3 +73,4 @@ $('')
 //         return false;
 //     });
 // });
+>>>>>>> b6b1396e55f93527bf6d63c654f743306c149fcb

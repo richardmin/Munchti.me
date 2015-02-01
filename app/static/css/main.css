@@ -17,6 +17,10 @@ body {background-color: #52CCA3; border-top: 3px solid #000}
   font-family: "Montserrat";
 }
 
+.accordion .accordion-navigation.active>a, .accordion dd.active>a{
+  background:#52CCA3;
+}
+
 .page_wrap {margin: 25px auto 25px; border-radius: 3px; background: #FFF; box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4)}
 
 .header_nav {background: #f8f8f8; padding: 10px 0 2px; margin-bottom: 25px}

@@ -7,7 +7,7 @@
 
       <div class="row">
         <div class="twelve columns">
-         <div class="heading_dots"><h1 class="heading_supersize" style="margin-bottom:5px"><span class="heading_center_bg">munchti.me</span></h1></div>
+         <div class="heading_dots"><h1 class="heading_supersize" style="margin-bottom:5px"><span class="heading_center_bg">munchery</span></h1></div>
        </div>
      </div>
 
@@ -103,8 +103,8 @@
 
   <li class="accordion-navigation">
     <a href="#panel3a" id="ordersRequest"><center>I want to deliver!</center></a>
-    <center><br><div id="panel3a" class="content">
-    </div></center>
+    <div id="panel3a" class="content">
+    </div>
     <script id="ordersTemplate" type="x-tmpl-mustache">
       {% raw %}
         {{#items}}
@@ -161,17 +161,9 @@ document.getElementById("ordersRequest").addEventListener("click", processClick)
           $.get("api/post/"+a, function(info) {
             if(! $.isEmptyObject(info))
             {
-// var $newdiv1 = $("<a href:'#' class:'accordion-navigation' id:'posting'+a>" ),
-//   newdiv2 = document.createElement( "li" );
 
-
-            $("#panel3a").append($("<a>", {class:"button secondary", href:info.id}).text(info.food + " from " + info.source + " at around "
-             + (info.time.substring(info.time.indexOf("T") + 1, info.time.lastIndexOf(":"))))).wrap("<p></p>");
-            $("#panel3a").append($("<br />"));
-            // }
-
-            // $("#panel3a").wrap("<div li class='accordion-navigation' id='posting'+a>").text(info.food + " from " + info.source + " at around "
-            //  + (info.time.substring(info.time.indexOf("T") + 1, info.time.lastIndexOf(":")))  + " for " + info.payment );
+            $("#panel3a").append($("<li>",{class:"accordion-navigation"}, {id:"posting"+a}).text(info.food + " from " + info.source + " at around "
+             + (info.time.substring(info.time.indexOf("T") + 1, info.time.lastIndexOf(":")))  + " for " + info.payment ));
 
               // document.getElementById("posting"+a).addEventListener("click", function() {
                 //does something like loading the rest of the data
@@ -181,12 +173,12 @@ document.getElementById("ordersRequest").addEventListener("click", processClick)
             
             }
             // console.log(data);
-          // });
-        });
+          });
+        }
       }
       // document.getElementById("panel3a").innerHTML = _____________; <!--HTTP GET REQUEST, FORMAT -->
   }
-}
+
 
 </script>
 {% endblock %}

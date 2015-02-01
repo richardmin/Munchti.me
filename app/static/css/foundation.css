@@ -1169,7 +1169,6 @@ button, .button {
   button:hover, button:focus, .button:hover, .button:focus {
     color: #FFFFFF; }
   button.secondary, .button.secondary {
-    width:100%;
     background-color: #e7e7e7;
     border-color: #b9b9b9;
     color: #333333; }

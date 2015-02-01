@@ -146,18 +146,35 @@
 </div><!-- end page wrap) -->
 
 <script> 
-  
+  var isuck=true;
 
 document.getElementById("ordersRequest").addEventListener("click", processClick);
   
   function processClick() 
   {
-      var data;
-      $.get("api/post/1", function(info) {
-        $(data)
-          .append("I want " + info.food + " from " + info.location + " at " + info.time.strftime("%I:%M"));
-      }, "json" );
-      console.log(data);
+      if(isuck)
+        isuck=false;
+      else
+        isuck = true;
+
+      if(isuck)
+      {
+        $("#panel3a").children("div").remove();
+      }
+      else
+        for(a = 1; a < 10; a++)
+        {
+          $.get("api/post/"+a, function(info) {
+            if(! $.isEmptyObject(info))
+            {
+
+            $("#panel3a").append($("<div>",{class:"asdf"}, {id:"posting"+a}).text(info.food + " from " + info.source + " at around "
+             + (info.time.substring(info.time.indexOf("T") + 1, info.time.lastIndexOf(":")))  + " for " + info.payment ));
+            
+            }
+            // console.log(data);
+          });
+        }
       // document.getElementById("panel3a").innerHTML = _____________; <!--HTTP GET REQUEST, FORMAT -->
   }
 

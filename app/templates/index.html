@@ -16,9 +16,9 @@
       <ul class="accordion" data-accordion>
 
         <li class="accordion-navigation">
-          <a href="#panel2a">I want food! </a>
+          <a href="#panel2a"><center>I want food! </center></a>
           <div id="panel2a" class="content">
-            <form id="orderForm">
+            <form data-abide id="orderForm">
               <div class="row">
                 <div class="9 columns">
                   <div class="row">
@@ -26,7 +26,7 @@
                       <label for="right-label" class="right inline">My Name:</label>
                     </div>
                     <div class="small-9 columns">
-                      <input type="text" id="right-label" name="name" placeholder="John Doe" required >
+                      <input type="text" id="right-label" name="name" placeholder="John Doe (required)" required >
                     </div>
                   </div>
                   <div class="row">
@@ -34,7 +34,7 @@
                       <label for="right-label" class="right inline">I want:</label>
                     </div>
                     <div class="small-9 columns">
-                      <input type="text" id="right-label" name="food" placeholder="A Hamburger" required>
+                      <input type="text" id="right-label" name="food" placeholder="A Hamburger (required)" required>
                     </div>
                   </div>
                   <div class="row">
@@ -50,15 +50,24 @@
                       <label for="right-label" class="right inline">Deliver it to:</label>
                     </div>
                     <div class="small-9 columns">
-                      <input type="text" id="right-label" name="destination" placeholder="12 Milk Street" required>
+                      <input type="text" id="right-label" name="destination" placeholder="12 Milk Street (required)" required>
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="small-3 columns">
+                      <label for="right-label" class="right inline">Deliver it by:</label>
+                    </div>
+                    <div class="small-9 columns">
+                      <input type="text" id="right-label" name = "time" placeholder="10:00:00 (required)" required pattern="time">
+                    </div>
+                  </div>
+                  
                  <div class="row">
                   <div class="small-3 columns">
                     <label for="right-label" class="right inline">I'll pay:</label>
                   </div>
                   <div class="small-9 columns">
-                   <input type="text" name="payment" placeholder="50" required />
+                   <input type="text" name="payment" placeholder="3 swipes (required)" required />
                  </div>
                </div>
 
@@ -67,7 +76,7 @@
                   <label for="right-label" class="right inline">Means of contact</label>
                 </div>
                 <div class="small-9 columns">
-                 <input type="text" name="contact" placeholder="meme@gmail.com or 123-456-7890" required/>
+                 <input type="text" name="contact" placeholder="meme@gmail.com or 123-456-7890 (required)" required/>
                </div>
              </div>
              <div class="row">
@@ -80,19 +89,22 @@
              <div id="orderError">
              </div>
              <div class="row">
-            <input style="margin-left: 163px;" class="button round" type="submit" id="submit">
             </div>
+
           </div>
 
         </div>
-      </form>
-      <div id="orderError">
+        </form>
+        <br>
+        <div id="orderError"><center><input class="button round" type="submit" id="submit"></center>
       </div>
     </div>
   </li>
 
   <li class="accordion-navigation">
-    <a href="#panel3a" id="ordersRequest">I want to deliver!</a>
+    <a href="#panel3a" id="ordersRequest"><center>I want to deliver!</center></a>
+    <div id="panel3a" class="content">
+    </div>
     <script id="ordersTemplate" type="x-tmpl-mustache">
       {% raw %}
         {{#items}}
@@ -125,11 +137,48 @@
 <div class="row">
   <div class="twelve columns">
     <ul id="menu3" class="footer_menu horizontal">
-      <li class=""><a href="index.html">Home</a></li>
+      <li class=""><a href="\">Refresh</a></li>
     </ul>
   </div>
 </div>
 </div>
 
 </div><!-- end page wrap) -->
+
+<script> 
+  var isuck=true;
+
+document.getElementById("ordersRequest").addEventListener("click", processClick);
+  
+  function processClick() 
+  {
+      if(isuck)
+      {
+        isuck = false;
+
+        for(a = 1; a < 10; a++)
+        {
+          $.get("api/post/"+a, function(info) {
+            if(! $.isEmptyObject(info))
+            {
+
+            $("#panel3a").append($("<li>",{class:"accordion-navigation"}, {id:"posting"+a}).text(info.food + " from " + info.source + " at around "
+             + (info.time.substring(info.time.indexOf("T") + 1, info.time.lastIndexOf(":")))  + " for " + info.payment ));
+
+              // document.getElementById("posting"+a).addEventListener("click", function() {
+                //does something like loading the rest of the data
+                //i don't knwow foundation
+                  // Console.log("fu");
+              // });
+            
+            }
+            // console.log(data);
+          });
+        }
+      }
+      // document.getElementById("panel3a").innerHTML = _____________; <!--HTTP GET REQUEST, FORMAT -->
+  }
+
+
+</script>
 {% endblock %}

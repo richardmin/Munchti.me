@@ -27,24 +27,7 @@ $('#orderForm').submit(function(event) {
         return;
     }
     var data = $('#orderForm').serializeObject();
-<<<<<<< HEAD
-    console.log(JSON.stringify(data));
-    $.ajax({
-        type: 'POST',
-        url: '/api/post',
-        data: JSON.stringify(data),
-        contentType: 'application/json',
-    }).done(function(order, textStatus, jqXHR) {
-        window.location.replace("/");
-        $("#submit").hide();
-        userOrderSuccess();
-    }).fail(function(error, textStatus, jqXHR) {
-        userOrderError();
-    });
-});
 
-
-=======
     if(data.name=="" || data.food=="" || data.destination==""|| data.time=="" || data.payment=="" || data.contact=="" )
     {
         userFormError();
@@ -65,12 +48,9 @@ $('#orderForm').submit(function(event) {
     }
 });
 
-$('')
 
 // $(function() {
 //     $('#orderForm').submit(function() {
 //         $('#result').text(JSON.stringify($('#orderForm').serializeObject()));
 //         return false;
 //     });
-// });
->>>>>>> b6b1396e55f93527bf6d63c654f743306c149fcb

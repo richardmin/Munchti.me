@@ -1,3 +1,14 @@
+$(document).ready(function() {
+    loadOrders();
+})
+
+function loadOrders(){
+    var ordersPromise = getPosts();
+
+    ordersPromise = ordersPromise.then(function(orders, textStatus, jqXHR) {
+        return $
+    })
+}
 $('#orderForm').submit(function(event) {
     event.preventDefault();  
 
@@ -17,6 +28,7 @@ $('#orderForm').submit(function(event) {
         data: JSON.stringify(data),
         contentType: 'application/json',
     }).done(function(order, textStatus, jqXHR) {
+        window.location.replace("/");
         $("#submit").hide();
         userOrderSuccess();
     }).fail(function(error, textStatus, jqXHR) {
@@ -24,9 +36,4 @@ $('#orderForm').submit(function(event) {
     });
 });
 
-// $(function() {
-//     $('#orderForm').submit(function() {
-//         $('#result').text(JSON.stringify($('#orderForm').serializeObject()));
-//         return false;
-//     });
-// });
+

@@ -18,16 +18,21 @@ $.fn.serializeObject = function()
     return o;
 };
 
-$(function() {
-    $('form').submit(function() {
-        $('#result').text(JSON.stringify($('form').serializeObject()));
-        return false;
-    });
-});
+function getArguments(args) {
+    return Array.prototype.slice.call(args);
+}
+
+// $(function() {
+//     $('form').submit(function() {
+//         $('#result').text(JSON.stringify($('form').serializeObject()));
+//         return false;
+//     });
+// });
 
 function getPosts() {
     return $.ajax({
         type: 'GET',
-        url: '/api/post/',
+        url: '/api/post',
     })
 }
+console.log(getPosts());

@@ -165,11 +165,11 @@ document.getElementById("ordersRequest").addEventListener("click", processClick)
             $("#panel3a").append($("<li>",{class:"accordion-navigation"}, {id:"posting"+a}).text(info.food + " from " + info.source + " at around "
              + (info.time.substring(info.time.indexOf("T") + 1, info.time.lastIndexOf(":")))  + " for " + info.payment ));
 
-              document.getElementById("posting"+a).addEventListener("click", function() {
+              // document.getElementById("posting"+a).addEventListener("click", function() {
                 //does something like loading the rest of the data
                 //i don't knwow foundation
-                  Console.log("fu");
-              });
+                  // Console.log("fu");
+              // });
             
             }
             // console.log(data);

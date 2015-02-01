@@ -26,7 +26,7 @@
                       <label for="right-label" class="right inline">My Name:</label>
                     </div>
                     <div class="small-9 columns">
-                      <input type="text" id="right-label" name="name" placeholder="John Doe" >
+                      <input type="text" id="right-label" name="name" placeholder="John Doe" required >
                     </div>
                   </div>
                   <div class="row">
@@ -34,7 +34,7 @@
                       <label for="right-label" class="right inline">I want:</label>
                     </div>
                     <div class="small-9 columns">
-                      <input type="text" id="right-label" name="food" placeholder="A Hamburger">
+                      <input type="text" id="right-label" name="food" placeholder="A Hamburger" required>
                     </div>
                   </div>
                   <div class="row">
@@ -50,15 +50,15 @@
                       <label for="right-label" class="right inline">Deliver it to:</label>
                     </div>
                     <div class="small-9 columns">
-                      <input type="text" id="right-label" name="destination" placeholder="12 Milk Street">
+                      <input type="text" id="right-label" name="destination" placeholder="12 Milk Street" required>
                     </div>
                   </div>
                  <div class="row">
                   <div class="small-3 columns">
-                    <label for="right-label" class="right inline">I'll pay $:</label>
+                    <label for="right-label" class="right inline">I'll pay:</label>
                   </div>
                   <div class="small-9 columns">
-                   <input type="text" name="payment" placeholder="50" />
+                   <input type="text" name="payment" placeholder="50" required />
                  </div>
                </div>
 
@@ -67,7 +67,7 @@
                   <label for="right-label" class="right inline">Means of contact</label>
                 </div>
                 <div class="small-9 columns">
-                 <input type="text" name="contact" placeholder="meme@gmail.com or 123-456-7890"/>
+                 <input type="text" name="contact" placeholder="meme@gmail.com or 123-456-7890" required/>
                </div>
              </div>
              <div class="row">
@@ -76,11 +76,11 @@
                 </div>
                 <div class="small-9 columns">
                  <input type="text" name="info"/>
-               </div
+               </div>
              <div id="orderError">
              </div>
              <div class="row">
-              <center><input type="submit" class="button round" type="submit"></center>
+            <input style="margin-left: 163px;" class="button round" type="submit" id="submit">
             </div>
           </div>
 

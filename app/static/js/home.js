@@ -6,7 +6,7 @@ $('#orderForm').submit(function(event) {
 		return;
 	}
     function userOrderSuccess() {
-        $('#orderError').html('<center>We have recieved your order! Please refresh to submit a new one.</center>');
+        $('#orderError').html('<div data-alert class="alert-box success radius"><strong>We have recieved your order! Please refresh to submit a new one.</strong></div>');
         return;
     }
     var data = $('#orderForm').serializeObject();
@@ -17,6 +17,7 @@ $('#orderForm').submit(function(event) {
         data: JSON.stringify(data),
         contentType: 'application/json',
     }).done(function(order, textStatus, jqXHR) {
+        $("#submit").hide();
         userOrderSuccess();
     }).fail(function(error, textStatus, jqXHR) {
         userOrderError();
